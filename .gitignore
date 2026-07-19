@@ -1,0 +1,5 @@
+# Nestjs specific
+/node_modules
+/otros_archivos
+/pruebas.js
+/turnos.json

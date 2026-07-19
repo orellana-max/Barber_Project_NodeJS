@@ -1,0 +1,24 @@
++-------------------------------------------------------------+
+  |                          USUARIOS                           |
+  |  (El cerebro del Login. Solo maneja accesos y seguridad)    |
+  +-------------------------------------------------------------+
+  | * id (PK)                                                   |
+  | * email                                                     |
+  | * password_hash (¡Nunca texto plano! Encriptada con salt)   |
+  | * rol ('cliente', 'barbero', 'cajero', 'admin')             |
+  +-------------------------------------------------------------+
+               |                                   |
+        (Si el rol es 'cliente')          (Si el rol es de staff)
+               |                                   |
+               v                                   v
+  +--------------------------+       +--------------------------+
+  |         CLIENTES         |       |       TRABAJADORES       |
+  |   (Perfil de consumo)    |       |    (Perfil laboral)      |
+  +--------------------------+       +--------------------------+
+  | * id (PK)                |       | * id (PK)                |
+  | * usuario_id (FK)        |       | * usuario_id (FK)        |
+  | * nombre                 |       | * nombre                 |
+  | * telefono               |       | * telefono               |
+  | * tipo_cliente           |       | * legajo                 |
+  | * genero                 |       | * dni, fecha_nacimiento  |
+  +--------------------------+       +--------------------------+
